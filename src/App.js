@@ -1,10 +1,16 @@
 import "./layout.scss";
 import Navbar from "./components/navbar/Navbar";
+import HomePage from "./pages/homePage/homePage";
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
+    <div className="layout">
+      <div className="navbar">
+        <Navbar />
+      </div>
+      <div className="content"> 
+        <HomePage />
+      </div>
     </div>
   );
 }

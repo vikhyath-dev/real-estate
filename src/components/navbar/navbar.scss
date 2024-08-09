@@ -71,7 +71,7 @@ nav{
 
         .menuIcon{
             display:none;
-            z-index: 999;
+            z-index: 989;
 
             img{
                 width:56px;
@@ -81,6 +81,7 @@ nav{
 
             @include sm {
                 display: inline;
+                z-index: 0;
             }
         }
 

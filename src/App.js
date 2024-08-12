@@ -7,6 +7,8 @@ import ListPage from "./pages/listPage/ListPage";
 import Layout from "./pages/layout/Layout";
 import SinglePage from "./pages/singlePage/SinglePage";
 import ProfilePage from "./pages/profilePage/ProfilePage";
+import Register from "./pages/register/register";
+import Login from "./pages/login/Login";
 
 
 function App() {
@@ -30,7 +32,15 @@ function App() {
         },
         {
           path: "/profile",
-          element: <ProfilePage/>,
+          element: <ProfilePage />,
+        },
+        {
+          path: "/register",
+          element: <Register />,
+        },
+        {
+          path: "/login",
+          element: <Login />,
         },
       ],
     },

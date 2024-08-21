@@ -11,10 +11,10 @@ import Register from "./pages/register/register";
 import Login from "./pages/login/Login";
 import ProfileUpdatePage from "./pages/profileUpdatePage/profileUpdatePage";
 import NewPostPage from "./pages/newPostPage/newPostPage";
+import { AuthContextProvider } from "./context/AuthContext";
+import { listPageLoader, singlePageLoader } from "./lib/loaders";
 
 
-
-function App() {
   const router = createBrowserRouter([
     {
       path: "/",
@@ -27,10 +27,12 @@ function App() {
         {
           path: "/list",
           element: <ListPage />,
+          loader:listPageLoader,
         },
         {
           path: "/:id",
           element: <SinglePage />,
+          loader: singlePageLoader,
         },
 
         {
@@ -41,10 +43,7 @@ function App() {
           path: "/register",
           element: <Register />,
         },
-        {
-          path: "/add",
-          element: <NewPostPage />,
-        },
+       
       ],
     },
     {
@@ -67,7 +66,13 @@ function App() {
     },
   ]);
 
-  return <RouterProvider router={router} />;
+  
+function App() {
+  return (
+    <AuthContextProvider>
+      <RouterProvider router={router} />
+    </AuthContextProvider>
+  ); 
 }
 
 export default App;

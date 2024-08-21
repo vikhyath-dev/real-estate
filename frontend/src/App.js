@@ -10,10 +10,11 @@ import ProfilePage from "./pages/profilePage/ProfilePage";
 import Register from "./pages/register/register";
 import Login from "./pages/login/Login";
 import ProfileUpdatePage from "./pages/profileUpdatePage/profileUpdatePage";
+import NewPostPage from "./pages/newPostPage/newPostPage";
+
 
 
 function App() {
-
   const router = createBrowserRouter([
     {
       path: "/",
@@ -31,13 +32,18 @@ function App() {
           path: "/:id",
           element: <SinglePage />,
         },
+
+        {
+          path: "/login",
+          element: <Login />,
+        },
         {
           path: "/register",
           element: <Register />,
         },
         {
-          path: "/login",
-          element: <Login />,
+          path: "/add",
+          element: <NewPostPage />,
         },
       ],
     },
@@ -53,14 +59,15 @@ function App() {
           path: "/profile/update",
           element: <ProfileUpdatePage />,
         },
+        {
+          path: "/add",
+          element: <NewPostPage />,
+        },
       ],
     },
   ]);
 
-  return (
-    
-    <RouterProvider router={router} />
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

@@ -1,13 +1,32 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import './singlePage.scss'
 import Slider from '../../components/slider/Slider'
 import Map from '../../components/map/Map'
-import { singlePostData, userData } from '../../lib/dummydata'
-import { useLoaderData } from 'react-router-dom'
+import { useLoaderData, useNavigate } from 'react-router-dom'
 import DOMPurify from "dompurify";
+import { AuthContext } from "../../context/AuthContext";
+import apiRequest from "../../lib/apiRequest";
 
 export default function SinglePage() {
   const post = useLoaderData();
+  const [saved, setSaved] = useState(post.isSaved);
+  const { currentUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleSave = async () => {
+    if (!currentUser) {
+      navigate("/login");
+    }
+    
+    setSaved((prev) => !prev);
+    try {
+      await apiRequest.post("/users/save", { postId: post.id });
+    } catch (err) {
+      console.log(err);
+      setSaved((prev) => !prev);
+    }
+  };
+
   return (
     <div className="singlePage">
       <div className="details">
@@ -131,12 +150,17 @@ export default function SinglePage() {
           </div>
           <div className="buttons">
             <button>
-              <img src="icons8-message-96.png" alt="" />
+              <img src="/chat.png" alt="" />
               Send a Message
             </button>
-            <button>
-              <img src="icons8-save-100.png" alt="" />
-              Save the Place
+            <button
+              onClick={handleSave}
+              style={{
+                backgroundColor: saved ? "#fece51" : "white",
+              }}
+            >
+              <img src="/save.png" alt="" />
+              {saved ? "Place Saved" : "Save the Place"}
             </button>
           </div>
         </div>

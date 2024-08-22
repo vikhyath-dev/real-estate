@@ -12,7 +12,7 @@ import Login from "./pages/login/Login";
 import ProfileUpdatePage from "./pages/profileUpdatePage/profileUpdatePage";
 import NewPostPage from "./pages/newPostPage/newPostPage";
 import { AuthContextProvider } from "./context/AuthContext";
-import { listPageLoader, singlePageLoader } from "./lib/loaders";
+import { listPageLoader, profilePageLoader, singlePageLoader } from "./lib/loaders";
 
 
   const router = createBrowserRouter([
@@ -53,6 +53,7 @@ import { listPageLoader, singlePageLoader } from "./lib/loaders";
         {
           path: "/profile",
           element: <ProfilePage />,
+          loader: profilePageLoader,
         },
         {
           path: "/profile/update",

@@ -10,7 +10,7 @@ export default function Card({item}) {
       </Link>
       <div className="textContainer">
         <h2 className="title">
-          <Link>{item.title}</Link>
+          <Link to={`/${item.id}`}>{item.title}</Link>
         </h2>
         <p className="address">
           <img src="/icons8-pin-100.png" alt="" />

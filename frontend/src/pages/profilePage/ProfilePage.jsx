@@ -23,7 +23,7 @@ export default function ProfilePage() {
     }
   }
   return (
-     <div className="profilePage">
+    <div className="profilePage">
       <div className="details">
         <div className="wrapper">
           <div className="title">
@@ -74,9 +74,16 @@ export default function ProfilePage() {
       </div>
       <div className="chatContainer">
         <div className="wrapper">
-          <Chat />
+          <Suspense fallback={<p>Loading...</p>}>
+            <Await
+              resolve={data.chatResponse}
+              errorElement={<p>Error loading chats!</p>}
+            >
+              {(chatResponse) => <Chat chats={chatResponse.data} />}
+            </Await>
+          </Suspense>
         </div>
       </div>
-      </div>
+    </div>
   );
 }

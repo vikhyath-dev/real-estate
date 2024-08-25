@@ -1,3 +1,5 @@
+import prisma from "../lib/prisma.js"
+
 export const getChats = async (req, res) => {
   const tokenUserId = req.userId;
 

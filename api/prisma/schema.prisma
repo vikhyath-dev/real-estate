@@ -60,14 +60,14 @@ model PostDetail {
   school     Int?
   bus        Int?
   restaurant Int?
-  post       Post    @relation(fields: [postId], references: [id])
+  post       Post    @relation(fields: [postId], references: [id], onDelete: Cascade)
   postId     String  @unique @db.ObjectId
 }
 
 model SavedPost {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
   user      User     @relation(fields: [userId], references: [id])
-  post      Post     @relation(fields: [postId], references: [id])
+  post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
   userId    String   @unique @db.ObjectId
   postId    String   @unique @db.ObjectId
   createdAt DateTime @default(now())

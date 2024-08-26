@@ -11,10 +11,9 @@ import Register from "./pages/register/register";
 import Login from "./pages/login/Login";
 import ProfileUpdatePage from "./pages/profileUpdatePage/profileUpdatePage";
 import NewPostPage from "./pages/newPostPage/newPostPage";
-import { AuthContextProvider } from "./context/AuthContext";
 import { listPageLoader, profilePageLoader, singlePageLoader } from "./lib/loaders";
 
-
+  function App() {
   const router = createBrowserRouter([
     {
       path: "/",
@@ -67,13 +66,8 @@ import { listPageLoader, profilePageLoader, singlePageLoader } from "./lib/loade
     },
   ]);
 
-  
-function App() {
-  return (
-    <AuthContextProvider>
-      <RouterProvider router={router} />
-    </AuthContextProvider>
-  ); 
+   return  <RouterProvider router={router} />
+    
 }
 
 export default App;

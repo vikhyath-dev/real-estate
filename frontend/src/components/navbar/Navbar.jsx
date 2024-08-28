@@ -21,10 +21,10 @@ function Navbar() {
           <img src="/icons8-home-50.png" alt="logo"></img>
           <span>WealthyEstate</span>
         </a>
-        <a href="/home">Home</a>
+        <a href="/">Home</a>
         <a href="/about">About</a>
         <a href="/contact">Contact</a>
-        <a href="/agents">Agents</a>
+        <a href="/">Agents</a>
       </div>
       <div className="right">
         {currentUser ? (

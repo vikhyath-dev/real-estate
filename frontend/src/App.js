@@ -12,6 +12,8 @@ import Login from "./pages/login/Login";
 import ProfileUpdatePage from "./pages/profileUpdatePage/profileUpdatePage";
 import NewPostPage from "./pages/newPostPage/newPostPage";
 import { listPageLoader, profilePageLoader, singlePageLoader } from "./lib/loaders";
+import About from "./pages/about/About";
+import Contact from "./pages/contact/Contact";
 
   function App() {
   const router = createBrowserRouter([
@@ -22,6 +24,14 @@ import { listPageLoader, profilePageLoader, singlePageLoader } from "./lib/loade
         {
           path: "/",
           element: <HomePage />,
+        },
+        {
+          path:"/about",
+          element: <About />
+        },
+        {
+          path: "/contact",
+          element: <Contact />
         },
         {
           path: "/list",

@@ -101,3 +101,11 @@
     }
    }
 }
+
+ #delete-button{
+    padding:10px 20px;
+
+    &:hover{
+        background-color: #c4c3c3;
+    }
+   }

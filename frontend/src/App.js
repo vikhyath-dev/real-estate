@@ -14,6 +14,7 @@ import NewPostPage from "./pages/newPostPage/newPostPage";
 import { listPageLoader, profilePageLoader, singlePageLoader } from "./lib/loaders";
 import About from "./pages/about/About";
 import Contact from "./pages/contact/Contact";
+import UpdatePostPage from "./pages/updatePostPage/updatePostPage";
 
   function App() {
   const router = createBrowserRouter([
@@ -72,6 +73,10 @@ import Contact from "./pages/contact/Contact";
           path: "/add",
           element: <NewPostPage />,
         },
+        {
+          path: "/update/:id",
+          element: <UpdatePostPage/>
+        }
       ],
     },
   ]);

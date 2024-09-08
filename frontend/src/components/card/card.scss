@@ -102,10 +102,37 @@
    }
 }
 
- #delete-button{
-    padding:10px 20px;
+ .button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
-    &:hover{
-        background-color: #c4c3c3;
-    }
-   }
+.button:hover {
+  background-color: #0056b3;
+}
+
+.updateButton {
+  background-color: #28a745;
+}
+
+.updateButton:hover {
+  background-color: #218838;
+}
+
+.deleteButton {
+  background-color: #dc3545;
+}
+
+.deleteButton:hover {
+  background-color: #c82333;
+}

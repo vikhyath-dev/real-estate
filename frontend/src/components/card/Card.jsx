@@ -57,9 +57,14 @@ export default function Card({ item }) {
           </div>
         </div>
         {currentUser && item.userId === currentUser.id && (
-          <button id="delete-button" onClick={handleDelete}>
-            Delete
-          </button>
+          <>
+            <Link to={`/update/${item.id}`} className="button updateButton">
+              Update
+            </Link>
+            <button className="button deleteButton" onClick={handleDelete}>
+              Delete
+            </button>
+          </>
         )}
       </div>
     </div>

@@ -17,7 +17,6 @@ export default function SinglePage() {
     if (!currentUser) {
       navigate("/login");
     }
-    
     setSaved((prev) => !prev);
     try {
       await apiRequest.post("/users/save", { postId: post.id });
@@ -150,7 +149,7 @@ export default function SinglePage() {
           </div>
           <div className="buttons">
             <button>
-              <img src="/chat.png" alt="" />
+              <img src="/icons8-chat-64.png" alt="" />
               Send a Message
             </button>
             <button
@@ -159,7 +158,7 @@ export default function SinglePage() {
                 backgroundColor: saved ? "#fece51" : "white",
               }}
             >
-              <img src="/save.png" alt="" />
+              <img src="/icons8-save-100.png" alt="" />
               {saved ? "Place Saved" : "Save the Place"}
             </button>
           </div>

@@ -36,7 +36,7 @@ function HomePage() {
           </div>
         </div>
         <div className="imgContainer">
-          <img src="/bg.png" alt="buildings" />
+          <img src="/pngwing.com (4).png" alt="buildings" />
         </div>
       </div>
     );

@@ -7,6 +7,7 @@ nav{
     height: 100px;
 
     a{
+        font-weight: 600;
         transition:all 0.4s ease;
 
         &:hover{
@@ -63,6 +64,7 @@ nav{
         a{
             padding:12px 24px;
             margin: 20px;
+            font-weight: 600;
         }
 
         .user{
@@ -86,7 +88,7 @@ nav{
 
             .profile{
                 padding:12px 24px;
-                background-color: yellow;
+                background-color: #fece51;
                 border:none;
                 cursor: pointer;
                 position: relative;
@@ -108,7 +110,7 @@ nav{
         }
 
         .register{
-            background-color: coral;
+            background-color: #fece51;
         }
 
         .menuIcon{
@@ -141,6 +143,18 @@ nav{
             justify-content: center;
             align-items: center;
             font-size: 24px;
+
+            .closeMenu{
+                position:absolute;
+                top:10px;
+                right:10px;
+                height: 30px;
+                color: white;
+                padding:20px;
+                font-size: 30px;
+                background-color: black;
+                border:none;
+            }
 
             &.active{
                 right:0;

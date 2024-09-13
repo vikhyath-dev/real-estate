@@ -35,7 +35,7 @@ export default function Card({ item }) {
           <img src="/icons8-pin-100.png" alt="" />
           <span>{item.address}</span>
         </p>
-        <p className="price">{item.price}</p>
+        <p className="price">£{item.price}</p>
         <div className="bottom">
           <div className="features">
             <div className="feature">
@@ -57,14 +57,14 @@ export default function Card({ item }) {
           </div>
         </div>
         {currentUser && item.userId === currentUser.id && (
-          <>
+          <div>
             <Link to={`/update/${item.id}`} className="button updateButton">
               Update
             </Link>
             <button className="button deleteButton" onClick={handleDelete}>
               Delete
             </button>
-          </>
+          </div>
         )}
       </div>
     </div>

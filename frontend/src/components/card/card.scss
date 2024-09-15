@@ -122,17 +122,21 @@
 }
 
 .updateButton {
-  background-color: #28a745;
+  background-color: rgb(21, 142, 142);
 }
 
 .updateButton:hover {
-  background-color: #218838;
+  background-color: rgb(32, 161, 161);
 }
 
 .deleteButton {
-  background-color: #dc3545;
+  background-color: #a92c38;
 }
 
 .deleteButton:hover {
   background-color: #c82333;
+}
+.buttonGroup{
+  display: flex;
+  justify-content: space-between;
 }

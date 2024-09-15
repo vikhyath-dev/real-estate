@@ -1,13 +1,15 @@
-import { Link } from 'react-router-dom'
+import { Link, useLoaderData, useNavigate } from 'react-router-dom'
 import './card.scss'
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import apiRequest from '../../lib/apiRequest'
 import { AuthContext } from '../../context/AuthContext';
 
 export default function Card({ item }) {
 
+  
   const { currentUser } = useContext(AuthContext);
-  console.log(currentUser)
+ 
+
   const handleDelete = async () => {
     try {
       const response = await apiRequest.delete(`/posts/${item.id}`);
@@ -48,7 +50,7 @@ export default function Card({ item }) {
             </div>
           </div>
           <div className="icons">
-            <div className="icon">
+            <div className="icon" >
               <img src="/icons8-save-100.png" alt="save" />
             </div>
             <div className="icon">
@@ -57,7 +59,7 @@ export default function Card({ item }) {
           </div>
         </div>
         {currentUser && item.userId === currentUser.id && (
-          <div>
+          <div className='buttonGroup'>
             <Link to={`/update/${item.id}`} className="button updateButton">
               Update
             </Link>

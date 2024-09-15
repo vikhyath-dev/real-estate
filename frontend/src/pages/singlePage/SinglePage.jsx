@@ -9,6 +9,7 @@ import apiRequest from "../../lib/apiRequest";
 
 export default function SinglePage() {
   const post = useLoaderData();
+  console.log(post)
   const [saved, setSaved] = useState(post.isSaved);
   const { currentUser } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -39,7 +40,7 @@ export default function SinglePage() {
                   <img src="/icons8-pin-100.png" alt="" />
                   <span>{post.address}</span>
                 </div>
-                <div className="price">{post.price}</div>
+                <div className="price">£{post.price}</div>
               </div>
               <div className="user">
                 <img src={post.user.avatar} alt="" />
